@@ -12,16 +12,19 @@ function App() {
   const [gastos, setGastos] = useState([]);
   const [gasto,setGasto] = useState({});
   const [crearGasto,setCrearGasto]= useState(false)
-
   //useEffect actualiza el restante 
   useEffect(()=>{
 
     if(crearGasto){
       setGastos([...gastos, gasto]);
+      let presupuestoRestante = restante-gasto.cantidad;
+    setRestante(presupuestoRestante);
     }
+    //resta presupuesto
+    
     setCrearGasto(false)
    
-  },[gasto,gastos,crearGasto])
+  },[gasto,gastos,crearGasto,restante])
 
   //Agregar nuevo gasto
   return (

@@ -1,5 +1,6 @@
 import React from "react";
 import Gasto from "../Components/Gasto";
+import PropTypes from 'prop-types';
 
 const listadoGastos = ({ gastos }) => {
   return (
@@ -14,5 +15,9 @@ const listadoGastos = ({ gastos }) => {
     </div>
   );
 };
+
+listadoGastos.prototype ={
+    gastos:PropTypes.array.isRequired
+}
 
 export default listadoGastos;
