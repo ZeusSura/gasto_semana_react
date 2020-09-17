@@ -3,7 +3,7 @@ import Error from './Error'
 
 
 
-let Pregunta = ({setPresupuesto,setRestante}) => {
+let Pregunta = ({setPresupuesto,setRestante,setMostrarPregunta}) => {
 
     //Definir states
     const [cantidad,setCantidad]=useState(0)
@@ -24,6 +24,8 @@ let Pregunta = ({setPresupuesto,setRestante}) => {
 
         setError(false)
         setPresupuesto(cantidad)
+        setRestante(cantidad)
+        setMostrarPregunta(false)
     }
     
   return (
